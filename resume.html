@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黃蕾蓁 線上履歷</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F9FC}
+a{color:#0F172A}a:hover{color:#1D4ED8}
+@keyframes lc-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.lc-rise{animation:lc-rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes lc-curtain{0%,70%{transform:translateY(0)}100%{transform:translateY(-100%);visibility:hidden}}
+@keyframes lc-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes lc-name{from{opacity:0;letter-spacing:.5em;filter:blur(8px)}to{opacity:1;letter-spacing:.06em;filter:blur(0)}}
+.lc-curtain{position:fixed;inset:0;z-index:100;background:#F7F9FC;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;pointer-events:none;animation:lc-curtain 1.9s cubic-bezier(.7,0,.2,1) forwards}
+.lc-name{animation:lc-name 1s cubic-bezier(.2,.7,.2,1) both}
+.lc-bar{transform-origin:left;animation:lc-bar .9s .25s cubic-bezier(.7,0,.2,1) both}
+@media (prefers-reduced-motion:reduce){.lc-rise,.lc-name,.lc-bar{animation:none}.lc-curtain{display:none}}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div style="background: #F7F9FC; color: #0F172A; font-family: 'Noto Sans TC', 'Space Grotesk', sans-serif; min-height: 100vh">
+<div class="lc-curtain" aria-hidden="true">
+<span class="lc-name" style="font-size: 64px; font-weight: 900; color: #0F172A">黃蕾蓁</span>
+<span class="lc-bar" style="display: block; width: 200px; height: 4px; border-radius: 4px; background: {{accent}}"></span>
+<span class="lc-name" style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.3em; color: #64748B; animation-delay: 0.2s">RESUME</span>
+</div>
+<div style="max-width: 960px; margin: 0 auto; padding: 32px 40px 80px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center; margin-bottom: 40px">
+<a href="index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.04em; text-decoration: none">Leichen Huang<span style="color: {{accent}}">.</span></a>
+<nav aria-label="網站選單" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
+<a href="index.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent">首頁</a>
+<a href="portfolio.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent">美宣作品集</a>
+<a href="camino.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent">朝聖之路</a>
+<a href="resume.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; color: {{accent}}; text-decoration: none; border-bottom: 2px solid {{accent}}">線上履歷</a>
+</nav>
+</div>
+<header class="lc-rise" style="animation-delay: 1.4s; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; padding: 32px; margin-bottom: 24px; background: #EEF4FF; border: 1px solid #D6E2FB; border-radius: 14px">
+<img src="images/portrait.jpg" alt="黃蕾蓁" style="width: 128px; height: 150px; object-fit: cover; border-radius: 8px; display: block">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h1 style="margin: 0; font-size: 56px; line-height: 1.1; font-weight: 900">黃蕾蓁<span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 500; color: #475569; margin-left: 16px">Leichen Huang</span></h1>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 24px">
+<a href="mailto:leichen.huang@gmail.com" style="font-size: 15px; text-decoration: none; border-bottom: 1px solid #CBD5E1; padding-bottom: 2px">leichen.huang@gmail.com</a>
+<a href="https://www.linkedin.com/in/leichen-huang-818753361/" style="font-size: 15px; text-decoration: none; border-bottom: 1px solid #CBD5E1; padding-bottom: 2px">LinkedIn</a>
+<a href="portfolio.html" style="font-size: 15px; text-decoration: none; border-bottom: 1px solid #CBD5E1; padding-bottom: 2px">美宣作品集</a>
+</div>
+</div>
+</header>
+<div class="lc-rise" style="animation-delay: 1.55s">
+<section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #E2E8F0">
+<h2 style="flex: 0 0 160px; margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; color: {{accent}}">簡介</h2>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-size: 16px; line-height: 1.9; color: #334155">政治大學財政學系學生，具備活動企劃、社群行銷與視覺設計經驗，曾參與校園組織、專案競賽及實際接案。擅長將想法轉化為具體企劃與視覺內容，並具備團隊協作與專案執行能力。</p>
+</div>
+</section>
+<section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #E2E8F0">
+<h2 style="flex: 0 0 160px; margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; color: {{accent}}">教育背景</h2>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span>國立政治大學｜財政學系</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B">2025.09 — 至今</span></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px"><span>臺中市立臺中女子高級中等學校</span><span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B">2022 — 2025</span></div>
+</div>
+</div>
+</section>
+<section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #E2E8F0">
+<h2 style="flex: 0 0 160px; margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; color: {{accent}}">組織／領導經驗</h2>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700">政大創聯會<span style="font-weight: 400; color: #475569">｜人資組組員</span></h3>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B; white-space: nowrap">2026.07 — 至今</span>
+</div>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.75; color: #334155"><li style="margin: 0">撰寫內訓、外訓及學長姐分享會企劃書，透過提案競賽與組內成員競爭並接受主管評選</li><li style="margin: 0">擔任「創友聚」及「內訓」專案負責人，負責企劃、進度管理與團隊協作</li><li style="margin: 0">擔任「會遊」籌辦人，參與活動規劃與執行</li></ul>
+</div><div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700">財政系系學會<span style="font-weight: 400; color: #475569">｜美宣長</span></h3>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B; white-space: nowrap">2026.07 — 至今</span>
+</div>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.75; color: #334155"><li style="margin: 0">負責系學會 Instagram 視覺規劃與版面設計</li><li style="margin: 0">獨立完成系服、新生手冊及各項系學會周邊之視覺設計</li></ul>
+</div><div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700">政大藝術季<span style="font-weight: 400; color: #475569">｜副召集人</span></h3>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B; white-space: nowrap">2026.09 — 至今</span>
+</div>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.75; color: #334155"><li style="margin: 0">協助統籌藝術季各部門專案進度與跨組溝通</li><li style="margin: 0">負責社團財務帳務管理，掌握活動相關經費使用與核銷</li></ul>
+</div><div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700">2040 SCHOOL<span style="font-weight: 400; color: #475569">｜公關</span></h3>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B; white-space: nowrap">2024.09 — 2026.08</span>
+</div>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.75; color: #334155"><li style="margin: 0">撰寫短篇即時國際新聞、經營社群帳號，帶動粉絲數自 4,000+ 成長至 5,000+，單篇貼文平均觸及約 2,000+</li></ul>
+</div>
+</div>
+</section>
+<section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #E2E8F0">
+<h2 style="flex: 0 0 160px; margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; color: {{accent}}">專案與競賽</h2>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700">PTGA 校園專案管理大獎<span style="font-weight: 400; color: #475569">｜執行長</span></h3>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B; white-space: nowrap">2026.07</span>
+</div>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.75; color: #334155"><li style="margin: 0">以「韌性」與「永續」為核心進行專案規劃，負責企畫書與簡報製作</li><li style="margin: 0">參與專案架構、內容整合與成果提案，並獲評審團佳作</li></ul>
+</div><div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700">接案工作<span style="font-weight: 400; color: #475569">｜簡報美宣、排版設計</span></h3>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B; white-space: nowrap">2024.04 — 05</span>
+</div>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.75; color: #334155"><li style="margin: 0">獨立接案完成簡報美宣（文案轉簡報 20 頁）及排版設計（241 頁），總收入 $27,100</li></ul>
+</div>
+</div>
+</section>
+<section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #E2E8F0">
+<h2 style="flex: 0 0 160px; margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; color: {{accent}}">教學經驗</h2>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700">淡江大學數位學伴<span style="font-weight: 400; color: #475569">｜學伴</span></h3>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #64748B; white-space: nowrap">至今</span>
+</div>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.75; color: #334155"><li style="margin: 0">帶領 4 位國小學童學習英文</li><li style="margin: 0">運用人工智能製作轉盤、翻牌配對等遊戲化教材，累計完成 14 份教學簡報</li></ul>
+</div>
+</div>
+</section>
+<section style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 40px 0; border-top: 1px solid #E2E8F0">
+<h2 style="flex: 0 0 160px; margin: 0; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; color: {{accent}}">技能與能力</h2>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; line-height: 1.75"><span style="flex: 0 0 72px; color: #64748B">設計</span><span style="flex: 1 1 300px; color: #1E293B">Canva、PowerPoint、平面設計、攝影、影片剪輯</span></div><div style="display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; line-height: 1.75"><span style="flex: 0 0 72px; color: #64748B">行銷</span><span style="flex: 1 1 300px; color: #1E293B">社群經營、內容企劃、品牌行銷</span></div><div style="display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; line-height: 1.75"><span style="flex: 0 0 72px; color: #64748B">語言</span><span style="flex: 1 1 300px; color: #1E293B">English IELTS 7.0 (C1)、Spanish A1</span></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+
+</template>
+<script type="text/x-dc" id="dc-logic" data-props='{"accent":{"editor":"color","default":"#1D4ED8","options":["#1D4ED8","#0369A1","#4338CA","#0F766E"]},"$preview":{"width":1440,"height":2400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#1D4ED8' };
+  }
+}
+</script>
+<script src="dc-lite.js"></script>
+</body>
+</html>

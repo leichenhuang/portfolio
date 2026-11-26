@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黃蕾蓁 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF8F4}
+a{color:#17161B}a:hover{color:#C2410C}
+@keyframes lc-rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes lc-zoom{from{opacity:0;transform:scale(1.1)}to{opacity:1;transform:none}}
+@keyframes lc-curtain{0%,72%{transform:translateY(0)}100%{transform:translateY(-100%);visibility:hidden}}
+@keyframes lc-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes lc-name{from{opacity:0;letter-spacing:.5em;filter:blur(8px)}to{opacity:1;letter-spacing:.06em;filter:blur(0)}}
+.lc-rise{animation:lc-rise 1s cubic-bezier(.2,.7,.2,1) both}
+.lc-zoom{animation:lc-zoom 1.4s cubic-bezier(.2,.7,.2,1) both}
+.lc-curtain{position:fixed;inset:0;z-index:100;background:#FAF8F4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;pointer-events:none;animation:lc-curtain 2.1s cubic-bezier(.7,0,.2,1) forwards}
+.lc-name{animation:lc-name 1.1s cubic-bezier(.2,.7,.2,1) both}
+.lc-bar{transform-origin:left;animation:lc-bar 1s .3s cubic-bezier(.7,0,.2,1) both}
+@keyframes lc-blink{50%{opacity:0}}
+.lc-caret{animation:lc-blink 1s steps(1) infinite}
+.lc-film{display:inline-flex;flex-direction:column;gap:10px;min-width:100%;padding:8px 0;background:#17130F;box-sizing:border-box}
+.lc-sprk{height:14px;margin:0 10px;background-image:repeating-linear-gradient(90deg,transparent 0 8px,#FAF8F4 8px 20px,transparent 20px 30px);border-radius:2px}
+.lc-route{stroke-dasharray:100;stroke-dashoffset:100;animation:lc-draw 7s ease-in-out infinite}
+@keyframes lc-draw{0%,6%{stroke-dashoffset:100}72%,100%{stroke-dashoffset:0}}
+.lc-walker{offset-path:path('M549,190 Q505,186 460,167 Q400,140 347,110 Q315,88 282,75 Q250,60 216,63 Q130,70 47,104');offset-rotate:0deg;animation:lc-walk 7s ease-in-out infinite}
+@keyframes lc-walk{0%,6%{offset-distance:0%}72%,100%{offset-distance:100%}}
+.lc-goal{transform-box:fill-box;transform-origin:center;animation:lc-goal 7s ease-out infinite}
+@keyframes lc-goal{0%,70%{opacity:0;transform:scale(.4)}78%{opacity:.9}100%{opacity:0;transform:scale(2.4)}}
+@media (prefers-reduced-motion:reduce){.lc-route{animation:none;stroke-dashoffset:0}.lc-walker{animation:none;offset-distance:100%}.lc-goal{display:none}}
+@media (prefers-reduced-motion:reduce){.lc-rise,.lc-zoom,.lc-name,.lc-bar{animation:none}.lc-curtain{display:none}}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div style="background: #FAF8F4; color: #17161B; font-family: 'Noto Sans TC', 'Space Grotesk', sans-serif; min-height: 100vh">
+<div class="lc-curtain" aria-hidden="true">
+<span class="lc-name" style="font-size: 72px; font-weight: 900; color: #17161B">黃蕾蓁</span>
+<span class="lc-bar" style="display: block; width: 220px; height: 4px; border-radius: 4px; background: {{accent}}"></span>
+<span class="lc-name" style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.3em; color: #67646E; animation-delay: 0.25s">LEICHEN HUANG · PORTFOLIO</span>
+</div>
+
+<header style="max-width: 1200px; margin: 0 auto; padding: 20px 40px; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center">
+<a href="index.html" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.04em; text-decoration: none">Leichen Huang<span style="color: {{accent}}">.</span></a>
+<nav aria-label="網站選單" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
+<a href="index.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; color: {{accent}}; text-decoration: none; border-bottom: 2px solid {{accent}}">首頁</a>
+<a href="portfolio.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent">美宣作品集</a>
+<a href="camino.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent">朝聖之路</a>
+<a href="resume.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent">線上履歷</a>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 56px; padding-bottom: 96px; display: flex; flex-wrap: wrap; gap: 48px 56px; align-items: center">
+<div style="flex: 1.25 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p class="lc-rise" style="animation-delay: 1.5s; margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">HELLO, I&#39;M</p>
+<h1 class="lc-rise" style="animation-delay: 1.62s; margin: 0; font-size: 88px; line-height: 1.05; font-weight: 900">黃蕾蓁<span style="display: block; font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 500; color: #55525C; margin-top: 12px">Leichen Huang</span></h1>
+<p class="lc-rise" aria-label="我是 Leichen，就讀國立政治大學財政學系，現於系學會、政大藝術季及多項專案中負責美宣與企劃工作。我擅長將團隊的發想轉化為可執行的方案，負責專案管理與風險評估，並結合人工智能協作，將構想落實為觀眾看得見、用得上的成果。" style="animation-delay: 1.78s; margin: 0; max-width: 600px; display: grid; font-size: 17px; font-weight: 400; line-height: 2; letter-spacing: 0.04em; color: #34323A">
+<span aria-hidden="true" style="grid-area: 1 / 1; visibility: hidden">我是 Leichen，就讀國立政治大學財政學系，現於系學會、政大藝術季及多項專案中負責美宣與企劃工作。我擅長將團隊的發想轉化為可執行的方案，負責專案管理與風險評估，並結合人工智能協作，將構想落實為觀眾看得見、用得上的成果。</span>
+<span aria-hidden="true" style="grid-area: 1 / 1">{{typed}}<span class="lc-caret" style="display: inline-block; width: 1px; height: 1.1em; margin-left: 3px; vertical-align: -0.15em; background: {{accent}}"></span></span>
+</p>
+<ul class="lc-rise" style="animation-delay: 1.9s; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px; color: #67646E">
+<li>國立政治大學 財政學系｜2025 — 至今</li>
+<li>臺中女中｜2022 — 2025</li>
+</ul>
+<div class="lc-rise" style="animation-delay: 2.0s; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<a href="portfolio.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 26px; background: {{accent}}; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px">看美宣作品集<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+<a href="https://leichenhuang.github.io/wanderquest/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 26px; border: 1px solid #CFC8BC; font-weight: 500; font-size: 16px; text-decoration: none; border-radius: 999px">WanderQuest 專案<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+<a href="https://www.instagram.com/awai.archive/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 26px; border: 1px solid #CFC8BC; font-weight: 500; font-size: 16px; text-decoration: none; border-radius: 999px">Instagram<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+<a href="https://www.linkedin.com/in/leichen-huang-818753361/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 26px; border: 1px solid #CFC8BC; font-weight: 500; font-size: 16px; text-decoration: none; border-radius: 999px">LinkedIn<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+<a href="resume.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 26px; border: 1px solid #CFC8BC; font-weight: 500; font-size: 16px; text-decoration: none; border-radius: 999px">線上履歷<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6M9 14h6M9 17h4"></path></svg></a>
+</div>
+</div>
+</section>
+
+<section id="projects" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 80px; padding-bottom: 96px; border-top: 1px solid #E5E0D7; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">WORK &amp; PROJECTS</p>
+<h2 style="margin: 0; font-size: 44px; font-weight: 900">作品與專案</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px">
+<a href="portfolio.html" style="display: flex; flex-direction: column; gap: 18px; padding: 20px; background: #FFFFFF; border: 1px solid #E5E0D7; border-radius: 8px; text-decoration: none">
+<img src="images/kv-5night.jpg" alt="五系聯合之夜主視覺" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; border-radius: 4px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 900">美宣作品集</h3><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">系學會宿營回顧系列、五系聯合之夜主視覺、聯合耶晚、2040 SCHOOL 新聞圖卡與插畫，點進去可以放大看。</p>
+</a>
+<div style="display: flex; flex-direction: column; gap: 18px; padding: 20px; background: #FFFFFF; border: 1px solid #E5E0D7; border-radius: 8px">
+<a href="https://leichenhuang.github.io/wanderquest/" aria-label="WanderQuest 專案網站" style="display: block">
+<img src="images/wanderquest.jpg" alt="WanderQuest 專案視覺" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; border-radius: 4px; background: #FFFFFF">
+</a>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 900">WanderQuest</h3>
+<div style="display: flex; gap: 8px">
+<a href="https://www.instagram.com/wanderquest_taiwan/" aria-label="WanderQuest Instagram" title="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #CFC8BC; color: #17161B; text-decoration: none"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle></svg></a>
+<a href="https://leichenhuang.github.io/wanderquest/" aria-label="WanderQuest 專案網站" title="專案網站" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #CFC8BC; color: #17161B; text-decoration: none"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">創創入門課程專案（2026.09 — 12）。我負責提案與專案管理：專案分析、演講與簡報製作，也經營專案的 Instagram 帳號。</p>
+</div>
+</div>
+
+</section>
+
+<section id="experience" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 80px; padding-bottom: 96px; border-top: 1px solid #E5E0D7; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">EXPERIENCE</p>
+<h2 style="margin: 0; font-size: 44px; font-weight: 900">經歷</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 56px 64px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0 0 4px; font-size: 22px; font-weight: 900; color: {{accent}}">美宣與設計</h3>
+<ul style="list-style: none; margin: 0; padding: 0">
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">財政系系學會<span style="font-weight: 400; color: #55525C">｜美宣長</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.07 — 至今</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">負責系學會 Instagram 視覺規劃與版面設計，獨立完成系服、新生手冊及系學會周邊設計。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">五系聯合之夜<span style="font-weight: 400; color: #55525C">｜美宣</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.01 — 05</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">獨立完成「指南大5廳」主視覺設計與 IG 貼文製作。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">聯合耶晚<span style="font-weight: 400; color: #55525C">｜主視覺</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">設計「Soirée」主視覺與售票橫幅，IG 觸及 7,500+。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">2040 SCHOOL<span style="font-weight: 400; color: #55525C">｜美宣</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2025.09 — 至今</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">把文案轉換成好讀的新聞貼文圖。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">個人經營<span style="font-weight: 400; color: #55525C">｜繪圖與攝影帳號</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2025.06 — 至今</span>
+</div>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">臺中女中畢聯會<span style="font-weight: 400; color: #55525C">｜美宣組組長</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2025.04 — 06</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">美宣統籌、畢典現場場佈。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">獨立接案<span style="font-weight: 400; color: #55525C">｜簡報美宣、排版</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2024.04 — 05</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">文案轉簡報 20 頁、排版設計 241 頁。</p>
+</li>
+</ul>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0 0 4px; font-size: 22px; font-weight: 900; color: {{accent}}">組織與領導</h3>
+<ul style="list-style: none; margin: 0; padding: 0">
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">政大藝術季<span style="font-weight: 400; color: #55525C">｜副召集人</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.09 — 至今</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">統籌各部門專案進度與跨組溝通，對接活動、視設與攝影部門，參與策展討論。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">政大創聯會<span style="font-weight: 400; color: #55525C">｜人資組組員</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.07 — 至今</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">撰寫內訓、外訓及學長姐分享會企劃；「創友聚」、「內訓」專案負責人，「會遊」籌辦人。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">2040 SCHOOL<span style="font-weight: 400; color: #55525C">｜公關</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2024.09 — 2026.08</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">撰寫即時國際新聞、經營社群，粉絲數由 4,000+ 成長至 5,000+。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">臺中女中學生選舉委員會<span style="font-weight: 400; color: #55525C">｜委員長</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2023.09 — 2024.06</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">統籌學生會選舉流程，並把流程整理成文字化營運準則，作為交接依據。</p>
+</li>
+</ul>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0 0 4px; font-size: 22px; font-weight: 900; color: {{accent}}">專案與競賽</h3>
+<ul style="list-style: none; margin: 0; padding: 0">
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">創創入門 WanderQuest<span style="font-weight: 400; color: #55525C">｜提案與專案管理</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.09 — 12</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">負責專案分析、演講與簡報製作，並經營 Instagram 帳號 @wanderquest_taiwan。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">Guppy 孔雀魚<span style="font-weight: 400; color: #55525C">｜實習</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.11 — 至今</span>
+</div>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">資誠租稅盃<span style="font-weight: 400; color: #55525C">｜參賽</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.11</span>
+</div>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">法國巴黎人壽校園黑客松<span style="font-weight: 400; color: #55525C">｜參賽</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.10 — 12</span>
+</div>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">PTGA 校園專案管理大獎<span style="font-weight: 400; color: #55525C">｜執行長</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.07</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">以「韌性」與「永續」為核心規劃專案，獲評審團佳作。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">點識成金 全國高中生商業個案競賽<span style="font-weight: 400; color: #55525C">｜參賽</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2024.03</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">決賽第六名。</p>
+</li>
+</ul>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0 0 4px; font-size: 22px; font-weight: 900; color: {{accent}}">志工與人生清單</h3>
+<ul style="list-style: none; margin: 0; padding: 0">
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">政大 IC 部落<span style="font-weight: 400; color: #55525C">｜成員</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.02 — 07</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">暑假出隊花蓮富世國小、主持教案。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">花蓮咖啡廳<span style="font-weight: 400; color: #55525C">｜打工換宿</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.06 — 07</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">學習半自動義式咖啡機、擺盤、甜點與咖哩飯。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">淡江大學數位學伴<span style="font-weight: 400; color: #55525C">｜學伴</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">至今</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">目前帶 4 位小朋友學英文，運用人工智能製作轉盤、翻牌配對等遊戲化教材，已完成 14 份教學簡報。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">政大數位學伴<span style="font-weight: 400; color: #55525C">｜學伴</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2025.09 — 12</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">製作 10 份英語教學簡報。</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">西班牙朝聖之路<span style="font-weight: 400; color: #55525C">｜徒步完成</span></h4>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2025.08</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">第一屆政府青年百億圓夢計畫。</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="strengths" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 80px; padding-bottom: 96px; border-top: 1px solid #E5E0D7; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">STRENGTHS</p>
+<h2 style="margin: 0; font-size: 44px; font-weight: 900">特質與能力分析</h2>
+</div>
+<figure style="margin: 0; padding: 24px 24px 16px; background: #FFFFFF; border: 1px solid #E5E0D7; border-radius: 12px; display: flex; flex-direction: column; gap: 8px">
+<div style="position: relative; width: 100%; max-width: 960px; margin: 0 auto">
+<svg viewBox="0 0 960 620" role="img" aria-label="{{radar.label}}" style="width: 100%; height: auto; display: block">
+<sc-for list="{{radar.rings}}" as="rg" hint-placeholder-count="5">
+<polygon points="{{rg.pts}}" fill="none" stroke="#E5E0D7" stroke-width="1"></polygon>
+</sc-for>
+<sc-for list="{{radar.axes}}" as="ax" hint-placeholder-count="6">
+<line x1="480" y1="315" x2="{{ax.x}}" y2="{{ax.y}}" stroke="#E5E0D7" stroke-width="1"></line>
+</sc-for>
+<polygon points="{{radar.poly}}" fill="{{accent}}" fill-opacity="0.14" stroke="{{accent}}" stroke-width="2.5" stroke-linejoin="round"></polygon>
+<sc-for list="{{radar.dots}}" as="d" hint-placeholder-count="6">
+<circle cx="{{d.x}}" cy="{{d.y}}" r="5" fill="#FFFFFF" stroke="{{accent}}" stroke-width="2.5"></circle>
+</sc-for>
+</svg>
+<sc-for list="{{radar.blocks}}" as="b" hint-placeholder-count="6">
+<div aria-hidden="true" style="{{b.style}}">
+<strong style="display: block; font-size: 16px; color: #17161B">{{b.name}}<span style="margin-left: 8px; font-family: 'Space Grotesk', sans-serif; color: {{accent}}">{{b.score}} / 5</span></strong>
+<span style="display: block; font-size: 13px; color: #46434D">＋ {{b.plus}}</span>
+<span style="display: block; font-size: 13px; color: #67646E">－ {{b.minus}}</span>
+</div>
+</sc-for>
+</div>
+<figcaption style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 24px; font-size: 13px; color: #67646E"><span>自評，滿分 5 分</span><span>＋ 目前的優勢</span><span>－ 正在補強的地方</span></figcaption>
+</figure>
+</section>
+
+<section id="skills" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 80px; padding-bottom: 96px; border-top: 1px solid #E5E0D7; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">SKILLS</p>
+<h2 style="margin: 0; font-size: 44px; font-weight: 900">技能與工具</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 16px; color: #67646E; font-weight: 500">設計</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px"><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">Procreate</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">Canva</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">PowerPoint</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">平面設計</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">攝影</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">影片剪輯</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">網站架設</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">網頁設計</li></ul>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 16px; color: #67646E; font-weight: 500">行銷與企劃</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px"><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">社群經營</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">內容企劃</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">品牌行銷</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">企劃書撰寫</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">簡報與提案</li></ul>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 16px; color: #67646E; font-weight: 500">語言</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px"><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">English · IELTS 7.0 (C1)</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">Spanish · A1</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">中文</li></ul>
+</div>
+</div>
+</section>
+
+<section id="camino" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 80px; padding-bottom: 96px; border-top: 1px solid #E5E0D7; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center">
+<button type="button" onClick="{{coverOpen}}" aria-label="放大查看：抵達終點 Km 0,000" style="flex: 0 1 300px; min-width: 0; padding: 0; border: 0; background: #EEEAE2; border-radius: 8px; overflow: hidden; cursor: zoom-in">
+<img src="images/camino/km0me.jpg" alt="在 Km 0,000 里程碑旁的 Leichen" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block">
+</button>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">CAMINO DE SANTIAGO · 2025</p>
+<h2 style="margin: 0; font-size: 44px; line-height: 1.2; font-weight: 900">走完朝聖之路</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.9; letter-spacing: 0.04em; color: #46434D">2025 年 8 月，透過第一屆政府青年百億圓夢計畫，從 Sarria 出發，徒步約 114 公里走完西班牙朝聖之路，抵達聖地牙哥大教堂並取得朝聖證書，回國後整理成 13 篇影像紀錄，用 Canon EOS R50 拍下沿途風景，每篇都配上一首小詩。一路跟著貝殼與黃色箭頭前進，也用相機記錄沿途的光、城市與路標。</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border: 1px solid #DDD7CC; border-radius: 8px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #17161B">Sarria <span style="font-size: 15px; font-weight: 500; color: #67646E">薩里亞</span></span><span style="font-size: 13px; color: #67646E">起點</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border: 1px solid #DDD7CC; border-radius: 8px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #17161B">約 114 km</span><span style="font-size: 13px; color: #67646E">徒步距離</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border: 1px solid #DDD7CC; border-radius: 8px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #17161B">Compostela</span><span style="font-size: 13px; color: #67646E">朝聖證書</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border: 1px solid #DDD7CC; border-radius: 8px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #17161B">13 篇</span><span style="font-size: 13px; color: #67646E">影像紀錄貼文</span></div>
+</div>
+<a href="camino.html" style="display: inline-flex; align-items: center; gap: 10px; width: fit-content; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #17161B; color: #FFFFFF; font-size: 15px; font-weight: 700; text-decoration: none">看完整朝聖紀錄<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</section>
+
+<section id="contact" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 96px; padding-bottom: 64px; border-top: 1px solid #E5E0D7; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">CONTACT</p>
+<h2 style="margin: 0; font-size: 56px; line-height: 1.15; font-weight: 900">一起合作吧。</h2>
+<a href="mailto:leichen.huang@gmail.com" style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: {{accent}}; text-decoration: none; width: fit-content">leichen.huang@gmail.com</a>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px">
+<a href="https://www.instagram.com/leichen.__/">Instagram @leichen.__</a>
+<a href="https://www.instagram.com/awai.archive/">創作帳號 @awai.archive</a>
+<a href="https://www.linkedin.com/in/leichen-huang-818753361/">LinkedIn</a>
+<a href="resume.html">線上履歷</a>
+<a href="portfolio.html">美宣作品集</a>
+</div>
+<p style="margin: 48px 0 0; font-size: 13px; color: #67646E">© 2026 黃蕾蓁 Leichen Huang</p>
+</section>
+
+<sc-if value="{{lb.show}}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-modal="true" aria-label="{{lb.cap}}" style="position: fixed; inset: 0; z-index: 60; background: rgba(250,248,244,0.97); display: flex; flex-direction: column; gap: 16px; padding: 20px 24px; box-sizing: border-box">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; max-width: 1200px; width: 100%; margin: 0 auto">
+<p style="margin: 0; font-size: 15px; color: #34323A">{{lb.cap}}<span style="color: #67646E; margin-left: 12px">{{lb.counter}}</span></p>
+<button type="button" onClick="{{lb.close}}" aria-label="關閉" style="flex: none; width: 48px; height: 48px; border-radius: 999px; border: 1px solid #CFC8BC; background: transparent; color: #17161B; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+<div style="flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; gap: 16px">
+<button type="button" onClick="{{lb.prev}}" aria-label="上一張" style="flex: none; width: 52px; height: 52px; border-radius: 999px; border: 1px solid #CFC8BC; background: #FFFFFF; color: #17161B; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<img src="{{lb.src}}" alt="{{lb.cap}}" style="max-width: min(100%, 1100px); max-height: 100%; min-width: 0; object-fit: contain; display: block; border-radius: 4px">
+<button type="button" onClick="{{lb.next}}" aria-label="下一張" style="flex: none; width: 52px; height: 52px; border-radius: 999px; border: 1px solid #CFC8BC; background: #FFFFFF; color: #17161B; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg></button>
+</div>
+</div>
+</sc-if>
+</div>
+</template>
+<script type="text/x-dc" id="dc-logic" data-props='{"accent":{"editor":"color","default":"#C2410C","options":["#C2410C","#1D4ED8","#0F766E","#7C3AED"]},"sDesign":{"editor":"int","default":4,"min":1,"max":5,"section":"能力自評"},"sPlan":{"editor":"int","default":3,"min":1,"max":5,"section":"能力自評"},"sPM":{"editor":"int","default":3,"min":1,"max":5,"section":"能力自評"},"sSocial":{"editor":"int","default":3,"min":1,"max":5,"section":"能力自評"},"sComm":{"editor":"int","default":3,"min":1,"max":5,"section":"能力自評"},"sLang":{"editor":"int","default":4,"min":1,"max":5,"section":"能力自評"},"$preview":{"width":1440,"height":5300}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.full = '我是 Leichen，就讀國立政治大學財政學系，現於系學會、政大藝術季及多項專案中負責美宣與企劃工作。我擅長將團隊的發想轉化為可執行的方案，負責專案管理與風險評估，並結合人工智能協作，將構想落實為觀眾看得見、用得上的成果。'; this.state = { n: 0, ph: null, roll: null }; }
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { this.setState({ n: this.full.length }); return; }
+    this.t0 = setTimeout(() => {
+      this.timer = setInterval(() => {
+        const n = this.state.n + 1;
+        this.setState({ n });
+        if (n >= this.full.length) clearInterval(this.timer);
+      }, 55);
+    }, 2100);
+  }
+  componentWillUnmount() { clearTimeout(this.t0); clearInterval(this.timer); }
+  renderVals() {
+    const B = '';
+    const P = [
+      ['leon1', 'images/camino/leon1.jpg', '途經萊昂（León）老城'],
+      ['leon2', 'images/camino/leon2.jpg', '午後的街角'],
+      ['walk', 'images/camino/walk.jpg', '和夥伴一起走在加利西亞的鄉間'],
+      ['field', 'images/camino/field.jpg', '金黃麥田間的小徑'],
+      ['shell', 'images/camino/shell.jpg', '背包上的貝殼，朝聖者的記號'],
+      ['sign', 'images/camino/sign.jpg', '前往 Palas de Rei 的路標'],
+      ['km54', 'images/camino/km54.jpg', '石牆前的里程碑'],
+      ['km42', 'images/camino/km42.jpg', '距離終點 42 公里'],
+      ['light', 'images/camino/light.jpg', '午後的光'],
+      ['autumn', 'images/camino/autumn.jpg', '落葉鋪成的林蔭步道'],
+      ['fruit', 'images/camino/fruit.jpg', '路邊水果攤上的臺灣國旗'],
+      ['lake', 'images/camino/lake.jpg', '湖邊稍作休息'],
+      ['stamps', 'images/camino/stamps.jpg', '一路蓋滿印章的朝聖護照'],
+      ['pulpo', 'images/camino/pulpo.jpg', '加利西亞章魚，一天的犒賞'],
+      ['village', 'images/camino/village.jpg', '穿過加利西亞的小村莊'],
+      ['ribadiso', 'images/camino/ribadiso.jpg', 'Ribadiso 的朝聖者庇護所'],
+      ['barrels', 'images/camino/barrels.jpg', '路邊會笑的油桶'],
+      ['wisdom', 'images/camino/wisdom.jpg', '在智慧之牆前展開朝聖護照'],
+      ['leather', 'images/camino/leather.jpg', '貝殼紋樣的手工皮件攤'],
+      ['craft', 'images/camino/craft.jpg', '封蠟章與手環的工作台'],
+      ['sealing', 'images/camino/sealing.jpg', '幫朝聖護照蓋上封蠟'],
+      ['wax', 'images/camino/wax.jpg', '護照上的封蠟與小吊飾'],
+      ['statue', 'images/camino/statue.jpg', '夕陽裡的朝聖者雕像'],
+      ['towers', 'images/camino/towers.jpg', '聖地牙哥大教堂的雙塔'],
+      ['cath_me', 'images/camino/cath-me.jpg', '抵達聖地牙哥大教堂'],
+      ['balcony', 'images/camino/balcony.jpg', '聖地牙哥老城的花陽台'],
+      ['cert', 'images/camino/cert.jpg', '拿到朝聖證書'],
+      ['cath_night', 'images/camino/cath-night.jpg', '夜裡的大教堂'],
+      ['rainbow', 'images/camino/rainbow.jpg', '斑駁的彩虹斑馬線'],
+      ['km0', 'images/camino/km0.jpg', 'Km 0,000'],
+      ['km0me', 'images/camino/km0me.jpg', '走到 Km 0,000']
+    ];
+    const photos = P.map(([k, id, cap], i) => ({ key: k, src: B + id, cap, open: () => this.setState({ ph: i }) }));
+    const PEOPLE = ['walk', 'wisdom', 'cath_me', 'cert', 'km0me'];
+    const scene = photos.filter((p) => PEOPLE.indexOf(p.key) < 0);
+    const people = photos.filter((p) => PEOPLE.indexOf(p.key) >= 0);
+    const mk = (list, no, title, start) => ({ no, title, frames: list.map((p, j) => ({ ...p, mark: '\u25B8 ' + (start + j + 1) + '  ' + (start + j + 1) + 'A  CAMINO 400' })) });
+    const half = Math.ceil(scene.length / 2);
+    const view = this.state.roll;
+    const rolls = view === 'people' ? [mk(people, 'ROLL 03', '路上的我', 0)]
+      : view === 'scene' ? [mk(scene.slice(0, half), 'ROLL 01', '風景・路上', 0), mk(scene.slice(half), 'ROLL 02', '風景・抵達', half)] : [];
+    const btnBase = 'display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; ';
+    const btn = (key, label, n) => {
+      const on = view === key;
+      return { label: label + '（' + n + '）', pressed: on ? 'true' : 'false',
+        style: btnBase + (on ? 'background: #17161B; color: #FFFFFF; border: 1px solid #17161B' : 'background: #FFFFFF; color: #17161B; border: 1px solid #17161B'),
+        toggle: () => this.setState({ roll: on ? null : key }) };
+    };
+    const i = this.state.ph;
+    const go = (d) => () => this.setState({ ph: (i + d + photos.length) % photos.length });
+    const lb = i == null ? { show: false } : {
+      show: true, src: photos[i].src, cap: photos[i].cap, counter: (i + 1) + ' / ' + photos.length,
+      close: () => this.setState({ ph: null }), prev: go(-1), next: go(1)
+    };
+    const acc = this.props.accent ?? '#C2410C';
+    const clamp = (v, d) => Math.max(1, Math.min(5, Number(v ?? d) || d));
+    const SK = [
+      ['視覺設計', clamp(this.props.sDesign, 4), '主視覺、社群版面', '動態與品牌系統經驗少'],
+      ['企劃提案', clamp(this.props.sPlan, 3), 'PTGA 佳作、點識成金', '實際落地案例仍少'],
+      ['專案管理', clamp(this.props.sPM, 3), '多個專案負責人', '預算與時程控管待磨練'],
+      ['社群經營', clamp(this.props.sSocial, 3), '粉絲 4,000 → 5,000+', '數據分析與投放較弱'],
+      ['溝通協調', clamp(this.props.sComm, 3), '藝術季跨部門對接', '身兼多職，時間分配'],
+      ['語言能力', clamp(this.props.sLang, 4), 'IELTS 7.0（C1）', '西語僅 A1，口說待加強']
+    ];
+    const cx = 480, cy = 315, R = 170, n = SK.length;
+    const pt = (i, r) => { const a = -Math.PI / 2 + i * 2 * Math.PI / n; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; };
+    const f = (v) => v.toFixed(1);
+    const blocks = SK.map(([k, v, plus, minus], i) => {
+      const [lx, ly] = pt(i, R + 26);
+      const side = Math.abs(lx - cx) < 8 ? 'mid' : (lx > cx ? 'r' : 'l');
+      const tx = side === 'mid' ? '-50%' : (side === 'r' ? '0' : '-100%');
+      const ty = i === 0 ? '-100%' : (side === 'mid' ? '0' : '-50%');
+      const align = side === 'mid' ? 'center' : (side === 'r' ? 'left' : 'right');
+      return { name: k, score: v, plus, minus,
+        style: 'position: absolute; left: ' + (lx / 960 * 100).toFixed(2) + '%; top: ' + (ly / 620 * 100).toFixed(2) + '%; transform: translate(' + tx + ', ' + ty + '); text-align: ' + align + '; line-height: 1.55; white-space: nowrap; font-family: Noto Sans TC, sans-serif' };
+    });
+    const radar = {
+      label: '能力雷達圖：' + SK.map(([k, v, p, m]) => k + ' ' + v + ' 分，優勢：' + p + '，待加強：' + m).join('；'),
+      rings: [1, 2, 3, 4, 5].map((k) => ({ pts: SK.map((_, i) => pt(i, R * k / 5).map(f).join(',')).join(' ') })),
+      axes: SK.map((_, i) => { const [x, y] = pt(i, R); return { x: f(x), y: f(y) }; }),
+      poly: SK.map(([, v], i) => pt(i, R * v / 5).map(f).join(',')).join(' '),
+      dots: SK.map(([, v], i) => { const [x, y] = pt(i, R * v / 5); return { x: f(x), y: f(y) }; }),
+      blocks
+    };
+    return { accent: this.props.accent ?? '#C2410C', rolls, rollOpen: !!view, btnScene: btn('scene', '沿途風景', scene.length), btnPeople: btn('people', '旅途中的我', people.length), radar, typed: this.full.slice(0, this.state.n), photos, lb, photoCount: photos.length, coverOpen: () => this.setState({ ph: photos.length - 1 }) };
+  }
+}
+</script>
+<script src="dc-lite.js"></script>
+</body>
+</html>
