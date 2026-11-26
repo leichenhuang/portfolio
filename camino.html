@@ -52,7 +52,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 <section id="camino" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 24px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center">
 <button type="button" onClick="{{coverOpen}}" aria-label="放大查看：抵達終點 Km 0,000" style="flex: 0 1 300px; min-width: 0; padding: 0; border: 0; background: #EEEAE2; border-radius: 8px; overflow: hidden; cursor: zoom-in">
-<img src="images/camino/km0me.jpg" alt="在 Km 0,000 里程碑旁的 Leichen" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block">
+<img src="camino-km0me.jpg" alt="在 Km 0,000 里程碑旁的 Leichen" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block">
 </button>
 <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">CAMINO DE SANTIAGO · 2025</p>
@@ -64,7 +64,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 <div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border: 1px solid #DDD7CC; border-radius: 8px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #17161B">Compostela</span><span style="font-size: 13px; color: #67646E">朝聖證書</span></div>
 <div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border: 1px solid #DDD7CC; border-radius: 8px"><span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #17161B">13 篇</span><span style="font-size: 13px; color: #67646E">影像紀錄貼文</span></div>
 </div>
-<a href="files/camino-plan.pdf" target="_blank" rel="noopener" style="width: fit-content; font-size: 12px; color: #67646E; text-decoration: none">出發前的計畫書</a>
+<a href="camino-plan.pdf" target="_blank" rel="noopener" style="width: fit-content; font-size: 12px; color: #67646E; text-decoration: none">出發前的計畫書</a>
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch">
@@ -220,7 +220,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 </sc-if>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding-top: 40px; border-top: 1px solid #E5E0D7">
 <figure style="margin: 0 auto; max-width: 420px; display: flex; align-items: flex-end; gap: 18px">
-<img src="images/camino/walk.jpg" alt="Leichen 走在朝聖之路的林間步道" style="flex: 1 1 260px; min-width: 0; max-width: 300px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; display: block; border-radius: 8px">
+<img src="camino-walk.jpg" alt="Leichen 走在朝聖之路的林間步道" style="flex: 1 1 260px; min-width: 0; max-width: 300px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 58% center; display: block; border-radius: 8px">
 <figcaption style="flex: none; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding-bottom: 6px">
 <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
 <span style="writing-mode: vertical-rl; font-size: 14px; font-weight: 400; letter-spacing: 0.4em; color: #55525C">我最喜歡的那年夏天</span>
@@ -264,37 +264,37 @@ class Component extends DCLogic {
   renderVals() {
     const B = '';
     const P = [
-      ['leon1', 'images/camino/leon1.jpg', '途經萊昂（León）老城'],
-      ['leon2', 'images/camino/leon2.jpg', '午後的街角'],
-      ['walk', 'images/camino/walk.jpg', '和夥伴一起走在加利西亞的鄉間'],
-      ['field', 'images/camino/field.jpg', '金黃麥田間的小徑'],
-      ['shell', 'images/camino/shell.jpg', '背包上的貝殼，朝聖者的記號'],
-      ['sign', 'images/camino/sign.jpg', '前往 Palas de Rei 的路標'],
-      ['km54', 'images/camino/km54.jpg', '石牆前的里程碑'],
-      ['km42', 'images/camino/km42.jpg', '距離終點 42 公里'],
-      ['light', 'images/camino/light.jpg', '午後的光'],
-      ['autumn', 'images/camino/autumn.jpg', '落葉鋪成的林蔭步道'],
-      ['fruit', 'images/camino/fruit.jpg', '路邊水果攤上的臺灣國旗'],
-      ['lake', 'images/camino/lake.jpg', '湖邊稍作休息'],
-      ['stamps', 'images/camino/stamps.jpg', '一路蓋滿印章的朝聖護照'],
-      ['pulpo', 'images/camino/pulpo.jpg', '加利西亞章魚，一天的犒賞'],
-      ['village', 'images/camino/village.jpg', '穿過加利西亞的小村莊'],
-      ['ribadiso', 'images/camino/ribadiso.jpg', 'Ribadiso 的朝聖者庇護所'],
-      ['barrels', 'images/camino/barrels.jpg', '路邊會笑的油桶'],
-      ['wisdom', 'images/camino/wisdom.jpg', '在智慧之牆前展開朝聖護照'],
-      ['leather', 'images/camino/leather.jpg', '貝殼紋樣的手工皮件攤'],
-      ['craft', 'images/camino/craft.jpg', '封蠟章與手環的工作台'],
-      ['sealing', 'images/camino/sealing.jpg', '幫朝聖護照蓋上封蠟'],
-      ['wax', 'images/camino/wax.jpg', '護照上的封蠟與小吊飾'],
-      ['statue', 'images/camino/statue.jpg', '夕陽裡的朝聖者雕像'],
-      ['towers', 'images/camino/towers.jpg', '聖地牙哥大教堂的雙塔'],
-      ['cath_me', 'images/camino/cath-me.jpg', '抵達聖地牙哥大教堂'],
-      ['balcony', 'images/camino/balcony.jpg', '聖地牙哥老城的花陽台'],
-      ['cert', 'images/camino/cert.jpg', '拿到朝聖證書'],
-      ['cath_night', 'images/camino/cath-night.jpg', '夜裡的大教堂'],
-      ['rainbow', 'images/camino/rainbow.jpg', '斑駁的彩虹斑馬線'],
-      ['km0', 'images/camino/km0.jpg', 'Km 0,000'],
-      ['km0me', 'images/camino/km0me.jpg', '走到 Km 0,000']
+      ['leon1', 'camino-leon1.jpg', '途經萊昂（León）老城'],
+      ['leon2', 'camino-leon2.jpg', '午後的街角'],
+      ['walk', 'camino-walk.jpg', '和夥伴一起走在加利西亞的鄉間'],
+      ['field', 'camino-field.jpg', '金黃麥田間的小徑'],
+      ['shell', 'camino-shell.jpg', '背包上的貝殼，朝聖者的記號'],
+      ['sign', 'camino-sign.jpg', '前往 Palas de Rei 的路標'],
+      ['km54', 'camino-km54.jpg', '石牆前的里程碑'],
+      ['km42', 'camino-km42.jpg', '距離終點 42 公里'],
+      ['light', 'camino-light.jpg', '午後的光'],
+      ['autumn', 'camino-autumn.jpg', '落葉鋪成的林蔭步道'],
+      ['fruit', 'camino-fruit.jpg', '路邊水果攤上的臺灣國旗'],
+      ['lake', 'camino-lake.jpg', '湖邊稍作休息'],
+      ['stamps', 'camino-stamps.jpg', '一路蓋滿印章的朝聖護照'],
+      ['pulpo', 'camino-pulpo.jpg', '加利西亞章魚，一天的犒賞'],
+      ['village', 'camino-village.jpg', '穿過加利西亞的小村莊'],
+      ['ribadiso', 'camino-ribadiso.jpg', 'Ribadiso 的朝聖者庇護所'],
+      ['barrels', 'camino-barrels.jpg', '路邊會笑的油桶'],
+      ['wisdom', 'camino-wisdom.jpg', '在智慧之牆前展開朝聖護照'],
+      ['leather', 'camino-leather.jpg', '貝殼紋樣的手工皮件攤'],
+      ['craft', 'camino-craft.jpg', '封蠟章與手環的工作台'],
+      ['sealing', 'camino-sealing.jpg', '幫朝聖護照蓋上封蠟'],
+      ['wax', 'camino-wax.jpg', '護照上的封蠟與小吊飾'],
+      ['statue', 'camino-statue.jpg', '夕陽裡的朝聖者雕像'],
+      ['towers', 'camino-towers.jpg', '聖地牙哥大教堂的雙塔'],
+      ['cath_me', 'camino-cath-me.jpg', '抵達聖地牙哥大教堂'],
+      ['balcony', 'camino-balcony.jpg', '聖地牙哥老城的花陽台'],
+      ['cert', 'camino-cert.jpg', '拿到朝聖證書'],
+      ['cath_night', 'camino-cath-night.jpg', '夜裡的大教堂'],
+      ['rainbow', 'camino-rainbow.jpg', '斑駁的彩虹斑馬線'],
+      ['km0', 'camino-km0.jpg', 'Km 0,000'],
+      ['km0me', 'camino-km0me.jpg', '走到 Km 0,000']
     ];
     const photos = P.map(([k, id, cap], i) => ({ key: k, src: B + id, cap, open: () => this.setState({ ph: i }) }));
     const PEOPLE = ['walk', 'wisdom', 'cath_me', 'cert', 'km0me'];

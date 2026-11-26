@@ -50,7 +50,7 @@ a{color:#F2F0EB}a:hover{color:#FF5A36}
 </div>
 </div>
 <figure class="lc-zoom" style="animation-delay: 1.55s; flex: 1.2 1 480px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="images/kv-5night.jpg" alt="五系聯合之夜「指南大5廳」主視覺" style="width: 100%; height: auto; display: block; border-radius: 6px">
+<img src="kv-5night.jpg" alt="五系聯合之夜「指南大5廳」主視覺" style="width: 100%; height: auto; display: block; border-radius: 6px">
 <figcaption style="font-size: 14px; color: #8E8B94">五系聯合之夜「指南大5廳」主視覺 · 2026</figcaption>
 </figure>
 </section>
@@ -175,16 +175,16 @@ class Component extends DCLogic {
     const names = { kv: '活動主視覺', social: '社群貼文', news: '新聞圖卡', illus: '插畫' };
     const B = '';
     const all = [
-      ['social', '宿營回顧 系列貼文', '財政系系學會 · 2026', ['images/camp-review-1.jpg', 'images/camp-review-2.jpg', 'images/camp-review-3.jpg', 'images/camp-review-4.jpg']],
-      ['kv', '指南大5廳 主視覺', '五系聯合之夜 · 2026', ['images/kv-5night.jpg', 'images/5night-2.jpg']],
-      ['kv', '2026 聯合耶晚 Soirée 售票橫幅', '聯合耶晚 · IG 觸及 7,500+ · 2026', ['images/soiree.jpg']],
-      ['social', '宿營報名貼文', '財政系系學會 · 2026', ['images/camp.jpg']],
-      ['news', '《極端高溫或成為常態？》', '2040school 新聞圖卡 · 2026', ['images/news-heat.jpg']],
-      ['news', '《哈利王子與王室間到底發生什麼事？》（上）', '2040school 新聞圖卡 · 2025', ['images/news-harry-1.jpg', 'images/news-harry-2.jpg', 'images/news-harry-3.jpg', 'images/news-harry-4.jpg', 'images/news-harry-5.jpg', 'images/news-harry-6.jpg', 'images/news-harry-7.jpg', 'images/news-harry-8.jpg']],
-      ['social', '特約店家優惠', '財政系系學會 · 2026', ['images/partners.jpg']],
-      ['illus', 'Procreate 臨摹練習', '個人練習 · 2026', ['images/procreate.jpg']],
-      ['social', '包種茶節 攤位地圖', '財政系系學會 · 2026', ['images/tea-festival.jpg']],
-      ['social', 'WHO ARE WE? 團隊介紹貼文', '創創入門 WanderQuest · IG @wanderquest_taiwan · 2026', ['images/wanderquest.jpg']]
+      ['social', '宿營回顧 系列貼文', '財政系系學會 · 2026', ['camp-review-1.jpg', 'camp-review-2.jpg', 'camp-review-3.jpg', 'camp-review-4.jpg']],
+      ['kv', '指南大5廳 主視覺', '五系聯合之夜 · 2026', ['kv-5night.jpg', '5night-2.jpg']],
+      ['kv', '2026 聯合耶晚 Soirée 售票橫幅', '聯合耶晚 · IG 觸及 7,500+ · 2026', ['soiree.jpg']],
+      ['social', '宿營報名貼文', '財政系系學會 · 2026', ['camp.jpg']],
+      ['news', '《極端高溫或成為常態？》', '2040school 新聞圖卡 · 2026', ['news-heat.jpg']],
+      ['news', '《哈利王子與王室間到底發生什麼事？》（上）', '2040school 新聞圖卡 · 2025', ['news-harry-1.jpg', 'news-harry-2.jpg', 'news-harry-3.jpg', 'news-harry-4.jpg', 'news-harry-5.jpg', 'news-harry-6.jpg', 'news-harry-7.jpg', 'news-harry-8.jpg']],
+      ['social', '特約店家優惠', '財政系系學會 · 2026', ['partners.jpg']],
+      ['illus', 'Procreate 臨摹練習', '個人練習 · 2026', ['procreate.jpg']],
+      ['social', '包種茶節 攤位地圖', '財政系系學會 · 2026', ['tea-festival.jpg']],
+      ['social', 'WHO ARE WE? 團隊介紹貼文', '創創入門 WanderQuest · IG @wanderquest_taiwan · 2026', ['wanderquest.jpg']]
     ].map(([c, t, m, ids], i) => ({
       key: i, c, title: t, cat: names[c], meta: m, ids, src: B + ids[0],
       multi: ids.length > 1, countLabel: ids.length + ' 張',
