@@ -29,6 +29,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 @keyframes lc-walk{0%,6%{offset-distance:0%}72%,100%{offset-distance:100%}}
 .lc-goal{transform-box:fill-box;transform-origin:center;animation:lc-goal 7s ease-out infinite}
 @keyframes lc-goal{0%,70%{opacity:0;transform:scale(.4)}78%{opacity:.9}100%{opacity:0;transform:scale(2.4)}}
+@media (max-width: 820px){.lc-rlab{display:none !important}.lc-rlist{display:flex !important}}
 @media (prefers-reduced-motion:reduce){.lc-route{animation:none;stroke-dashoffset:0}.lc-walker{animation:none;offset-distance:100%}.lc-goal{display:none}}
 @media (prefers-reduced-motion:reduce){.lc-rise,.lc-zoom,.lc-name,.lc-bar{animation:none}.lc-curtain{display:none}}
 </style>
@@ -57,7 +58,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 <section id="top" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 56px; padding-bottom: 96px; display: flex; flex-wrap: wrap; gap: 48px 56px; align-items: center">
 <div style="flex: 1.25 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
 <p class="lc-rise" style="animation-delay: 1.5s; margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">HELLO, I&#39;M</p>
-<h1 class="lc-rise" style="animation-delay: 1.62s; margin: 0; font-size: 88px; line-height: 1.05; font-weight: 900">黃蕾蓁<span style="display: block; font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 500; color: #55525C; margin-top: 12px">Leichen Huang</span></h1>
+<h1 class="lc-rise" style="animation-delay: 1.62s; margin: 0; font-size: clamp(56px, 15vw, 88px); line-height: 1.05; font-weight: 900">黃蕾蓁<span style="display: block; font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 500; color: #55525C; margin-top: 12px">Leichen Huang</span></h1>
 <p class="lc-rise" aria-label="我是 Leichen，就讀國立政治大學財政學系，現於系學會、政大藝術季及多項專案中負責美宣與企劃工作。我擅長將團隊的發想轉化為可執行的方案，負責專案管理與風險評估，並結合人工智能協作，將構想落實為觀眾看得見、用得上的成果。" style="animation-delay: 1.78s; margin: 0; max-width: 600px; display: grid; font-size: 17px; font-weight: 400; line-height: 2; letter-spacing: 0.04em; color: #34323A">
 <span aria-hidden="true" style="grid-area: 1 / 1; visibility: hidden">我是 Leichen，就讀國立政治大學財政學系，現於系學會、政大藝術季及多項專案中負責美宣與企劃工作。我擅長將團隊的發想轉化為可執行的方案，負責專案管理與風險評估，並結合人工智能協作，將構想落實為觀眾看得見、用得上的成果。</span>
 <span aria-hidden="true" style="grid-area: 1 / 1">{{typed}}<span class="lc-caret" style="display: inline-block; width: 1px; height: 1.1em; margin-left: 3px; vertical-align: -0.15em; background: {{accent}}"></span></span>
@@ -76,12 +77,24 @@ a{color:#17161B}a:hover{color:#C2410C}
 </div>
 </section>
 
+<section id="about" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 72px; padding-bottom: 80px; border-top: 1px solid #E5E0D7; display: flex; flex-wrap: wrap; gap: 24px 64px">
+<div style="flex: 0 1 260px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">ABOUT ME</p>
+<h2 style="margin: 0; font-size: 36px; font-weight: 900; line-height: 1.3">我看世界的方式</h2>
+</div>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px; font-size: 16px; line-height: 2; letter-spacing: 0.03em; color: #34323A">
+<p style="margin: 0">我對外界的細微變化格外敏銳：一束光線的角度、一段文字的停頓、一個人語氣裡的溫度。這份敏感是我觀察世界的方式，也讓我在日常的縫隙裡，總能拾起一些安靜的快樂。</p>
+<p style="margin: 0">我習慣以手寫沉澱閱讀，在筆記本裡留下觸動我的句子與思考；也相信更寬廣的世界，能讓個人的情緒找到安放的位置。於是我讀更遠的故事，走更長的路。</p>
+<p style="margin: 0">這也是我面對設計的態度：先感受，再轉譯，讓細膩的感知成為清晰而有溫度的視覺語言。</p>
+</div>
+</section>
+
 <section id="projects" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 80px; padding-bottom: 96px; border-top: 1px solid #E5E0D7; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">WORK &amp; PROJECTS</p>
 <h2 style="margin: 0; font-size: 44px; font-weight: 900">作品與專案</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px">
 <a href="portfolio.html" style="display: flex; flex-direction: column; gap: 18px; padding: 20px; background: #FFFFFF; border: 1px solid #E5E0D7; border-radius: 8px; text-decoration: none">
 <img src="kv-5night.jpg" alt="五系聯合之夜主視覺" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; border-radius: 4px">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
@@ -100,7 +113,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 <a href="https://leichenhuang.github.io/wanderquest/" aria-label="WanderQuest 專案網站" title="專案網站" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #CFC8BC; color: #17161B; text-decoration: none"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
 </div>
 </div>
-<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">創創入門課程專案（2026.09 — 12）。我負責提案與專案管理：專案分析、演講與簡報製作，也經營專案的 Instagram 帳號。</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">專為交換生、外籍生設計的雙語街區實境探索工作坊：結合實體道具包與貓空在地茶商家的互動任務，透過品茶、聽茶師說故事，深度體驗台灣在地文化；同時幫在地店家接觸國際客群，為傳統茶產業帶來新的體驗。<br><span style="display: block; margin-top: 8px; color: #67646E">創創入門第 13 屆（2026.09 — 12）｜我負責提案與專案管理，並經營專案 Instagram。</span></p>
 </div>
 </div>
 
@@ -111,7 +124,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">EXPERIENCE</p>
 <h2 style="margin: 0; font-size: 44px; font-weight: 900">經歷</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 56px 64px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px 64px">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0 0 4px; font-size: 22px; font-weight: 900; color: {{accent}}">美宣與設計</h3>
 <ul style="list-style: none; margin: 0; padding: 0">
@@ -203,10 +216,10 @@ a{color:#17161B}a:hover{color:#C2410C}
 <ul style="list-style: none; margin: 0; padding: 0">
 <li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
-<h4 style="margin: 0; font-size: 18px; font-weight: 700">創創入門 WanderQuest<span style="font-weight: 400; color: #55525C">｜提案與專案管理</span></h4>
+<h4 style="margin: 0; font-size: 18px; font-weight: 700">創創入門第 13 屆 WanderQuest<span style="font-weight: 400; color: #55525C">｜提案與專案管理</span></h4>
 <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #67646E; white-space: nowrap">2026.09 — 12</span>
 </div>
-<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">負責專案分析、演講與簡報製作，並經營 Instagram 帳號 @wanderquest_taiwan。</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #55525C">打造外國人取向的貓空茶文化實境探索工作坊；負責專案分析、演講與簡報製作，並經營 Instagram 帳號 @wanderquest_taiwan。</p>
 </li>
 <li style="display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid #E5E0D7">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline">
@@ -305,14 +318,23 @@ a{color:#17161B}a:hover{color:#C2410C}
 </sc-for>
 </svg>
 <sc-for list="{{radar.blocks}}" as="b" hint-placeholder-count="6">
-<div aria-hidden="true" style="{{b.style}}">
+<div class="lc-rlab" aria-hidden="true" style="{{b.style}}">
 <strong style="display: block; font-size: 16px; color: #17161B">{{b.name}}<span style="margin-left: 8px; font-family: 'Space Grotesk', sans-serif; color: {{accent}}">{{b.score}} / 5</span></strong>
 <span style="display: block; font-size: 13px; color: #46434D">＋ {{b.plus}}</span>
 <span style="display: block; font-size: 13px; color: #67646E">－ {{b.minus}}</span>
 </div>
 </sc-for>
 </div>
-<figcaption style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 24px; font-size: 13px; color: #67646E"><span>自評，滿分 5 分</span><span>＋ 目前的優勢</span><span>－ 正在補強的地方</span></figcaption>
+<ul class="lc-rlist" style="display: none; list-style: none; margin: 8px 0 0; padding: 0; flex-direction: column; gap: 10px">
+<sc-for list="{{radar.blocks}}" as="b" hint-placeholder-count="6">
+<li style="padding: 12px 14px; border: 1px solid #E5E0D7; border-radius: 10px; font-size: 14px; line-height: 1.6">
+<strong style="display: block; font-size: 16px; color: #17161B">{{b.name}}<span style="margin-left: 8px; font-family: 'Space Grotesk', sans-serif; color: {{accent}}">{{b.score}} / 5</span></strong>
+<span style="display: block; color: #46434D">＋ {{b.plus}}</span>
+<span style="display: block; color: #67646E">－ {{b.minus}}</span>
+</li>
+</sc-for>
+</ul>
+<figcaption style="margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 24px; font-size: 13px; color: #67646E"><span>自評，滿分 5 分</span><span>＋ 目前的優勢</span><span>－ 正在補強的地方</span></figcaption>
 </figure>
 </section>
 
@@ -321,7 +343,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">SKILLS</p>
 <h2 style="margin: 0; font-size: 44px; font-weight: 900">技能與工具</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <h3 style="margin: 0; font-size: 16px; color: #67646E; font-weight: 500">設計</h3>
 <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px"><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">Procreate</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">Canva</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">PowerPoint</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">平面設計</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">攝影</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">影片剪輯</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">網站架設</li><li style="padding: 8px 16px; border: 1px solid #CFC8BC; border-radius: 999px; font-size: 14px">網頁設計</li></ul>
@@ -360,7 +382,7 @@ a{color:#17161B}a:hover{color:#C2410C}
 <section id="contact" style="max-width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px; padding-top: 96px; padding-bottom: 64px; border-top: 1px solid #E5E0D7; display: flex; flex-direction: column; gap: 28px">
 <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">CONTACT</p>
 <h2 style="margin: 0; font-size: 56px; line-height: 1.15; font-weight: 900">一起合作吧。</h2>
-<a href="mailto:leichen.huang@gmail.com" style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: {{accent}}; text-decoration: none; width: fit-content">leichen.huang@gmail.com</a>
+<a href="mailto:leichen.huang@gmail.com" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(18px, 5vw, 28px); font-weight: 700; color: {{accent}}; text-decoration: none; max-width: 100%; overflow-wrap: anywhere">leichen.huang@gmail.com</a>
 <div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px">
 <a href="https://www.instagram.com/leichen.__/">Instagram @leichen.__</a>
 <a href="https://www.instagram.com/awai.archive/">創作帳號 @awai.archive</a>

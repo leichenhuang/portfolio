@@ -42,8 +42,12 @@ a{color:#F2F0EB}a:hover{color:#FF5A36}
 <section id="top" style="max-width: 1360px; margin: 0 auto; padding: 48px 40px 96px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end">
 <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
 <p class="lc-rise" style="animation-delay: 1.5s; margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">KEY VISUAL · PROMOTIONAL ART</p>
-<h1 class="lc-rise" style="animation-delay: 1.62s; margin: 0; font-size: 72px; line-height: 1.08; font-weight: 900; letter-spacing: -0.01em">讓每一張主視覺<br>都成為第一眼。</h1>
-<p class="lc-rise" style="animation-delay: 1.78s; margin: 0; max-width: 480px; font-size: 18px; line-height: 1.7; color: #A9A6A0">leichen，美宣設計師。現任系學會美宣長、2040school 美編組，做活動主視覺、社群貼文與新聞圖卡，也畫插畫。</p>
+<h1 class="lc-rise" style="animation-delay: 1.62s; margin: 0; font-size: clamp(44px, 11vw, 72px); line-height: 1.1; font-weight: 900; letter-spacing: -0.01em">讓每一張主視覺<br>都成為第一眼。</h1>
+<p class="lc-rise" style="animation-delay: 1.78s; margin: 0; max-width: 480px; font-size: 18px; line-height: 1.7; color: #A9A6A0">我經常注意到那些容易被略過的片刻，並相信它們值得被好好看見。我以活動主視覺、社群視覺、新聞圖卡與插畫，將這些感受轉譯為畫面。</p>
+<blockquote class="lc-rise" style="animation-delay: 1.85s; margin: 4px 0 0; padding-left: 18px; border-left: 2px solid {{accent}}; max-width: 480px; display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 17px; line-height: 1.8; letter-spacing: 0.06em; color: #F2F0EB">「我來到這世界，只是要看花如何盛開。」</p>
+<cite style="font-style: normal; font-size: 13px; letter-spacing: 0.08em; color: #8E8B94">—— 電影《靈魂急轉彎》</cite>
+</blockquote>
 <div class="lc-rise" style="animation-delay: 1.9s; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
 <a href="#works" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 28px; background: {{accent}}; color: #0B0B0D; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 999px">看作品</a>
 <a href="#contact" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 28px; border: 1px solid #3A3A42; font-weight: 500; font-size: 16px; text-decoration: none; border-radius: 999px">合作洽詢</a>
@@ -72,6 +76,9 @@ a{color:#F2F0EB}a:hover{color:#FF5A36}
 <article style="break-inside: avoid; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px">
 <button type="button" onClick="{{w.open}}" aria-label="放大查看 {{w.title}}" style="position: relative; display: block; width: 100%; padding: 0; border: 0; background: #16161A; border-radius: 6px; cursor: zoom-in; overflow: hidden">
 <img src="{{w.src}}" alt="{{w.title}}" style="width: 100%; height: auto; display: block">
+<sc-if value="{{w.hasVideo}}" hint-placeholder-val="{{ false }}">
+<span style="position: absolute; top: 12px; right: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: rgba(11,11,13,0.82); color: #F2F0EB; font-size: 13px; font-weight: 700"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"></path></svg>創作過程</span>
+</sc-if>
 <sc-if value="{{w.multi}}" hint-placeholder-val="{{ false }}">
 <span style="position: absolute; top: 12px; right: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: rgba(11,11,13,0.82); color: #F2F0EB; font-size: 13px; font-weight: 700">
 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="14" height="14" rx="2"></rect><path d="M3 17V5a2 2 0 0 1 2-2h12"></path></svg>{{w.countLabel}}</span>
@@ -117,7 +124,7 @@ a{color:#F2F0EB}a:hover{color:#FF5A36}
 <section id="contact" style="max-width: 1360px; margin: 0 auto; padding: 96px 40px 64px; border-top: 1px solid #222228; display: flex; flex-direction: column; gap: 28px">
 <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; letter-spacing: 0.24em; color: {{accent}}">CONTACT</p>
 <h2 style="margin: 0; font-size: 56px; line-height: 1.15; font-weight: 900">有案子想聊聊？</h2>
-<a href="mailto:leichen.huang@gmail.com" style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: {{accent}}; text-decoration: none; width: fit-content">leichen.huang@gmail.com</a>
+<a href="mailto:leichen.huang@gmail.com" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(18px, 5vw, 28px); font-weight: 700; color: {{accent}}; text-decoration: none; max-width: 100%; overflow-wrap: anywhere">leichen.huang@gmail.com</a>
 <div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px">
 <a href="https://www.instagram.com/awai.archive/">Instagram @awai.archive</a>
 <a href="https://www.linkedin.com/in/leichen-huang-818753361/">LinkedIn</a>
@@ -142,7 +149,12 @@ a{color:#F2F0EB}a:hover{color:#FF5A36}
 <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"></path></svg>
 </button>
 </sc-if>
+<sc-if value="{{viewer.isImage}}" hint-placeholder-val="{{ true }}">
 <img src="{{viewer.src}}" alt="{{viewer.title}}" style="max-width: min(100%, 1100px); max-height: 100%; object-fit: contain; display: block; border-radius: 4px; min-width: 0">
+</sc-if>
+<sc-if value="{{viewer.isVideo}}" hint-placeholder-val="{{ false }}">
+<video src="{{viewer.video}}" poster="{{viewer.poster}}" controls autoplay muted loop playsinline aria-label="{{viewer.title}} 創作過程縮時影片" style="max-width: min(100%, 1100px); max-height: 100%; display: block; border-radius: 4px; min-width: 0; background: #000"></video>
+</sc-if>
 <sc-if value="{{viewer.multi}}" hint-placeholder-val="{{ false }}">
 <button type="button" onClick="{{viewer.next}}" aria-label="下一張" style="flex: none; width: 52px; height: 52px; border-radius: 999px; border: 1px solid #3A3A42; background: #131316; color: #F2F0EB; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
 <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
@@ -182,11 +194,14 @@ class Component extends DCLogic {
       ['news', '《極端高溫或成為常態？》', '2040school 新聞圖卡 · 2026', ['news-heat.jpg']],
       ['news', '《哈利王子與王室間到底發生什麼事？》（上）', '2040school 新聞圖卡 · 2025', ['news-harry-1.jpg', 'news-harry-2.jpg', 'news-harry-3.jpg', 'news-harry-4.jpg', 'news-harry-5.jpg', 'news-harry-6.jpg', 'news-harry-7.jpg', 'news-harry-8.jpg']],
       ['social', '特約店家優惠', '財政系系學會 · 2026', ['partners.jpg']],
+      ['illus', '黑白線稿人像', '個人創作 · Procreate 縮時創作過程', ['ink-portrait.jpg'], 'ink-portrait-process.mp4'],
+      ['illus', '藍髮少女', '個人創作 · Procreate 縮時創作過程', ['blue-girl.jpg'], 'blue-girl-process.mp4'],
+      ['illus', '銀髮光環人像', '個人創作 · Procreate 縮時創作過程', ['halo-portrait.jpg'], 'halo-portrait-process.mp4'],
       ['illus', 'Procreate 臨摹練習', '個人練習 · 2026', ['procreate.jpg']],
       ['social', '包種茶節 攤位地圖', '財政系系學會 · 2026', ['tea-festival.jpg']],
       ['social', 'WHO ARE WE? 團隊介紹貼文', '創創入門 WanderQuest · IG @wanderquest_taiwan · 2026', ['wanderquest.jpg']]
-    ].map(([c, t, m, ids], i) => ({
-      key: i, c, title: t, cat: names[c], meta: m, ids, src: B + ids[0],
+    ].map(([c, t, m, ids, vid], i) => ({
+      key: i, c, title: t, cat: names[c], meta: m, ids, src: B + ids[0], hasVideo: !!vid, video: vid ? B + vid : '',
       multi: ids.length > 1, countLabel: ids.length + ' 張',
       open: () => this.setState({ open: i, idx: 0 })
     }));
@@ -194,7 +209,7 @@ class Component extends DCLogic {
     const idx = this.state.idx;
     const go = (d) => () => this.setState({ idx: (idx + d + cur.ids.length) % cur.ids.length });
     const viewer = cur ? {
-      show: true, title: cur.title, meta: cur.meta, multi: cur.multi,
+      show: true, title: cur.title, meta: cur.meta, multi: cur.multi, isVideo: cur.hasVideo, isImage: !cur.hasVideo, video: cur.video, poster: B + cur.ids[0],
       src: B + cur.ids[idx], counter: (idx + 1) + ' / ' + cur.ids.length,
       close: () => this.setState({ open: null }), prev: go(-1), next: go(1),
       thumbs: cur.ids.map((id, j) => ({
